@@ -124,7 +124,6 @@ function createUser(){
     $result = $sqlR1->fetch();
     $request1 = "INSERT INTO utilisateur (id, login, password,mail,nom,prenom) VALUES (?, ?, ?, ?, ?, ?)";
     $sqlR1 = $conn->prepare($request1);
-    $eee = $result['max'] + 1;
     $sqlR1->execute([$result['max']+1,$_POST['username'],$mdp,$_POST['useremail'],$_POST['userlast'],$_POST['userfirst']]);
 }
 
